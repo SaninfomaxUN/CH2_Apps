@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">CH2_Apps</string>
+
+    <!-- Estadísticas -->
+    <string name="EstadTitulo">¡Congratulations!</string>
+    <string name="EstadSubtitulo">Por tu compromiso con el Medio Ambiente</string>
+    <string name="EstadResultados">Tus <b>8 Kg</b>  de residuos separados y reciclados generan beneficios por <b>$8.218</b> COP </string>
+    <string name="EstadResultadosHint">Quiero invitarte para que continues!</string>
+    <string name="EstadConsejoTit1">Reciclando</string>
+    <string name="EstadConsejoSub1">Separa tus resuduos en contenedores adecuados.</string>
+    <string name="EstadConsejoTit2">Reutilizando</string>
+    <string name="EstadConsejoSub2">Dale una segunda vida a un producto.</string>
+    <string name="EstadConsejoTit3">Reduciendo</string>
+    <string name="EstadConsejoSub3">El consumo de agua, energia y combustible.</string>
+
+
+
+
+
+    <!-- General -->
+    <string name="regresar">regresar</string>
+
 </resources>
