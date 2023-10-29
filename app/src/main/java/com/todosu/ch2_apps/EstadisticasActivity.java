@@ -2,8 +2,10 @@ package com.todosu.ch2_apps;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.widget.ImageButton;
 
 import com.github.mikephil.charting.charts.HorizontalBarChart;
 import com.github.mikephil.charting.data.BarData;
@@ -20,12 +22,12 @@ public class EstadisticasActivity extends AppCompatActivity {
         setContentView(R.layout.activity_estadisticas);
 
         horizontalBarChart = findViewById(R.id.horizontalBarChart);
-
-
         BarData data = new BarData(getDataSet());
         horizontalBarChart.setData(data);
         horizontalBarChart.animateXY(2000, 2000);
         horizontalBarChart.invalidate();
+
+        regresar();
     }
 
     private BarDataSet getDataSet() {
@@ -43,18 +45,14 @@ public class EstadisticasActivity extends AppCompatActivity {
         return dataset;
     }
 
-    private ArrayList<String> getXAxisValues() {
-        ArrayList<String> labels = new ArrayList<>();
-        labels.add("January");
-        labels.add("February");
-        labels.add("March");
-        labels.add("April");
-        labels.add("May");
-        labels.add("June");
-        return labels;
+    private void regresar() {
+        ImageButton btnRegresar = findViewById(R.id.btnRegresar);
+        btnRegresar.setOnClickListener(view -> {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        });
+
     }
-
-
 
 
 }

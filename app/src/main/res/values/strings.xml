@@ -14,7 +14,12 @@
     <string name="EstadConsejoSub3">El consumo de agua, energia y combustible.</string>
 
 
-
+    <!-- Consejos -->
+    <string name="ConsejoTitulo">ECO TIPS</string>
+    <string name="ConsejoNota1">Realiza una planificación sostenible, evaluando proveedores, materiales.</string>
+    <string name="ConsejoNota2">Proporciona estaciones de reciclaje y compostaje claramente identificadas para su uso.</string>
+    <string name="ConsejoNota3">Promueve la conciencia ambiental de los asistentes con anuncios, cartles y charlas.</string>
+    <string name="ConsejoNota4">Opta por proveedores que ofrezcan opciones más sostenibles en términos de envases y productos promocionales.</string>
 
 
     <!-- General -->
