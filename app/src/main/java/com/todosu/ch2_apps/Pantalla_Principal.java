@@ -28,8 +28,8 @@ public class Pantalla_Principal extends AppCompatActivity {
         imageView6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent imageView6 = new Intent(Pantalla_Principal.this, EstadisticasActivity.class);
-                //startActivity(imageView6);
+                Intent imageView6 = new Intent(Pantalla_Principal.this, CategoriasActivity.class);
+                startActivity(imageView6);
             }
         });
 

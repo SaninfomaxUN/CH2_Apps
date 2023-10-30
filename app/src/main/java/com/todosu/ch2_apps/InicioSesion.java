@@ -48,8 +48,8 @@ public class InicioSesion extends AppCompatActivity {
         textView3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent textView3 = new Intent(InicioSesion.this, Registro.class);
-                //startActivity(textView3);
+                Intent textView3 = new Intent(InicioSesion.this, Registro.class);
+                startActivity(textView3);
             }
         });
 

@@ -18,6 +18,8 @@
         <activity
             android:name=".EstadisticasActivity"
             android:exported="false" />
+        <activity android:name=".CategoriasActivity"
+            android:exported="false"/>
         <activity
             android:name=".Gmail"
             android:exported="false" />
@@ -28,11 +30,10 @@
             android:name=".Calcular"
             android:exported="false" />
         <activity
-            android:name=".Eco_Tips"
-            android:exported="false" />
-        <activity
             android:name=".Pantalla_Principal"
             android:exported="false" />
+        <activity android:name=".Registro"
+            android:exported="false"/>
         <activity
             android:name=".InicioSesion"
             android:exported="false" />
