@@ -19,6 +19,24 @@
             android:name=".EstadisticasActivity"
             android:exported="false" />
         <activity
+            android:name=".Gmail"
+            android:exported="false" />
+        <activity
+            android:name=".Facebook"
+            android:exported="false" />
+        <activity
+            android:name=".Calcular"
+            android:exported="false" />
+        <activity
+            android:name=".Eco_Tips"
+            android:exported="false" />
+        <activity
+            android:name=".Pantalla_Principal"
+            android:exported="false" />
+        <activity
+            android:name=".InicioSesion"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

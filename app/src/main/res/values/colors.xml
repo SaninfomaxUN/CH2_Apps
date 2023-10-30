@@ -2,4 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="Verde_Aburrido">#4D724D</color>
+    <color name="Azul_Oscuro">#092042</color>
+    <color name="Azul_Sueve">#3D69AB</color>
+    <color name="Amarillo_Aburrido">#C0C231</color>
+    <color name="Verde_Suave">#328B32</color>
+    <color name="Verde_Grisaceo_Claro">#CEE3CE</color>
 </resources>
