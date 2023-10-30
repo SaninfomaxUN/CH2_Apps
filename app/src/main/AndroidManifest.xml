@@ -27,9 +27,6 @@
             android:name=".Facebook"
             android:exported="false" />
         <activity
-            android:name=".Calcular"
-            android:exported="false" />
-        <activity
             android:name=".Pantalla_Principal"
             android:exported="false" />
         <activity android:name=".Registro"

@@ -14,8 +14,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="vertical"
-            android:paddingTop="20sp">
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btnRegresar"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="#FFFFFF"
+                    android:contentDescription="@string/regresar"
+                    android:foregroundGravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/back_arrow" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/welcome"
@@ -73,6 +91,7 @@
                     android:id="@+id/et4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="textPassword"
                     android:hint="Contraseña" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -101,7 +120,8 @@
                     android:id="@+id/et3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Correo electronico" />
+                    android:hint="Correo electronico"
+                    android:inputType="text|textEmailAddress" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
