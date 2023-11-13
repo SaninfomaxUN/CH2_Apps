@@ -20,7 +20,7 @@ public class ConsejosActivity extends AppCompatActivity {
     private void regresar() {
         ImageButton btnRegresar = findViewById(R.id.btnRegresar);
         btnRegresar.setOnClickListener(view -> {
-            Intent intent = new Intent(this, Pantalla_Principal.class);
+            Intent intent = new Intent(this, MenuPrincipalActivity.class);
             startActivity(intent);
         });
 

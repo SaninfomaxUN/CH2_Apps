@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class InicioSesion extends AppCompatActivity {
+public class InicioSesionActivity extends AppCompatActivity {
 
 
     @Override
@@ -21,7 +21,7 @@ public class InicioSesion extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent button = new Intent(InicioSesion.this, Pantalla_Principal.class);
+                Intent button = new Intent(InicioSesionActivity.this, MenuPrincipalActivity.class);
                 startActivity(button);
             }
         });
@@ -30,7 +30,7 @@ public class InicioSesion extends AppCompatActivity {
         imageView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent imageView2 = new Intent(InicioSesion.this, Facebook.class);
+                Intent imageView2 = new Intent(InicioSesionActivity.this, FacebookActivity.class);
                 startActivity(imageView2);
             }
         });
@@ -38,7 +38,7 @@ public class InicioSesion extends AppCompatActivity {
         imageView3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent imageView3 = new Intent(InicioSesion.this, Gmail.class);
+                Intent imageView3 = new Intent(InicioSesionActivity.this, GmailActivity.class);
                 startActivity(imageView3);
 
             }
@@ -48,7 +48,7 @@ public class InicioSesion extends AppCompatActivity {
         textView3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent textView3 = new Intent(InicioSesion.this, Registro.class);
+                Intent textView3 = new Intent(InicioSesionActivity.this, RegistroActivity.class);
                 startActivity(textView3);
             }
         });

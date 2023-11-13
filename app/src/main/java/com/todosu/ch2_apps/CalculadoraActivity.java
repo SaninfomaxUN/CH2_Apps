@@ -7,12 +7,12 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class CategoriasActivity extends AppCompatActivity {
+public class CalculadoraActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_categorias);
+        setContentView(R.layout.activity_calculadora);
 
         calcularResultados();
         regresar();
@@ -31,7 +31,7 @@ public class CategoriasActivity extends AppCompatActivity {
     private void regresar() {
         ImageButton btnRegresar = findViewById(R.id.btnRegresar);
         btnRegresar.setOnClickListener(view -> {
-            Intent intent = new Intent(this, Pantalla_Principal.class);
+            Intent intent = new Intent(this, MenuPrincipalActivity.class);
             startActivity(intent);
         });
 

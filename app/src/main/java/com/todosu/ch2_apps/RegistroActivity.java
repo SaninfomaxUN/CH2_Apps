@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-public class Registro extends AppCompatActivity {
+public class RegistroActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,7 @@ public class Registro extends AppCompatActivity {
     private void guardar() {
         Button btnRegresar = findViewById(R.id.btnGuardar);
         btnRegresar.setOnClickListener(view -> {
-            Intent intent = new Intent(this, InicioSesion.class);
+            Intent intent = new Intent(this, InicioSesionActivity.class);
             startActivity(intent);
         });
 
@@ -31,7 +31,7 @@ public class Registro extends AppCompatActivity {
     private void regresar() {
         ImageButton btnRegresar = findViewById(R.id.btnRegresar);
         btnRegresar.setOnClickListener(view -> {
-            Intent intent = new Intent(this, InicioSesion.class);
+            Intent intent = new Intent(this, InicioSesionActivity.class);
             startActivity(intent);
         });
 

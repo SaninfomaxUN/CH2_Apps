@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-public class Gmail extends AppCompatActivity {
+public class GmailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +18,7 @@ public class Gmail extends AppCompatActivity {
         imgv_arrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent imgv_arrow = new Intent(Gmail.this, InicioSesion.class);
+                Intent imgv_arrow = new Intent(GmailActivity.this, InicioSesionActivity.class);
                 startActivity(imgv_arrow);
             }
         });

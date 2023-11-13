@@ -7,18 +7,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-public class Pantalla_Principal extends AppCompatActivity {
+public class MenuPrincipalActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pantalla_principal);
+        setContentView(R.layout.activity_menu_principal);
 
         ImageView imageView5 = findViewById(R.id.imageView5);
         imageView5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent imageView5 = new Intent(Pantalla_Principal.this, ConsejosActivity.class);
+                Intent imageView5 = new Intent(MenuPrincipalActivity.this, ConsejosActivity.class);
                 startActivity(imageView5);
 
             }
@@ -28,7 +28,7 @@ public class Pantalla_Principal extends AppCompatActivity {
         imageView6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent imageView6 = new Intent(Pantalla_Principal.this, CategoriasActivity.class);
+                Intent imageView6 = new Intent(MenuPrincipalActivity.this, CalculadoraActivity.class);
                 startActivity(imageView6);
             }
         });
@@ -37,7 +37,7 @@ public class Pantalla_Principal extends AppCompatActivity {
         imageView4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent imageView4 = new Intent(Pantalla_Principal.this, InicioSesion.class);
+                Intent imageView4 = new Intent(MenuPrincipalActivity.this, InicioSesionActivity.class);
                 startActivity(imageView4);
             }
         });

@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-public class Facebook extends AppCompatActivity {
+public class FacebookActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,8 +18,8 @@ public class Facebook extends AppCompatActivity {
         imageView7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent imageView7 = new Intent(Facebook.this, InicioSesion.class);
-                startActivity(imageView7);
+                Intent imageViewFB = new Intent(FacebookActivity.this, InicioSesionActivity.class);
+                startActivity(imageViewFB);
             }
         });
     }

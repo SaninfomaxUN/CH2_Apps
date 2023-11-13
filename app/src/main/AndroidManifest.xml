@@ -18,21 +18,21 @@
         <activity
             android:name=".EstadisticasActivity"
             android:exported="false" />
-        <activity android:name=".CategoriasActivity"
+        <activity android:name=".CalculadoraActivity"
             android:exported="false"/>
         <activity
-            android:name=".Gmail"
+            android:name=".GmailActivity"
             android:exported="false" />
         <activity
-            android:name=".Facebook"
+            android:name=".FacebookActivity"
             android:exported="false" />
         <activity
-            android:name=".Pantalla_Principal"
+            android:name=".MenuPrincipalActivity"
             android:exported="false" />
-        <activity android:name=".Registro"
+        <activity android:name=".RegistroActivity"
             android:exported="false"/>
         <activity
-            android:name=".InicioSesion"
+            android:name=".InicioSesionActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
