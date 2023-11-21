@@ -84,6 +84,7 @@ public class RegistroActivity extends AppCompatActivity {
                         if(contrasena.length<6){
                             Toast.makeText(getApplicationContext(), "Contraseña debe tener minimo 6 caracteres", Toast.LENGTH_LONG).show();
                         }else{
+                            Data.registrarUsuario(usuario);
                             guardar_usuario(usuario_registrar);
                         }
 
