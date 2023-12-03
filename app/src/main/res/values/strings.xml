@@ -2,10 +2,19 @@
     <string name="app_name">CH2_Apps</string>
 
     <!-- Estadísticas -->
-    <string name="EstadTitulo">¡Congratulations!</string>
-    <string name="EstadSubtitulo">Por tu compromiso con el Medio Ambiente</string>
+    <string name="EstadTitulo">Mis Estadisticas</string>
+    <string name="EstadSubtitulo">Tu compromiso con el Medio Ambiente</string>
+    <string name="EstadisticaBtnSelecEvento">Selecciona un evento</string>
+    <string name="EstadisticaMin">Minimo</string>
+    <string name="EstadisticaSubMin">La cantidad minima (Kg) por cada tipo de residuo registrado para este evento fue:</string>
+    <string name="EstadisticaMax">Maximo</string>
+    <string name="EstadisticaSubMax">La cantidad maxima (Kg) por cada tipo de residuo registrado para este evento fue:</string>
+    <string name="EstadisticaProm">Promedio</string>
+    <string name="EstadisticaSubProm">La cantidad promedio (Kg) por cada tipo de residuo registrado para este evento fue:</string>
+    <string name="EstadisticaTotal">Total</string>
+    <string name="EstadisticaSubTotal">La cantidad total (Kg) de residuos registrados para este evento fue:</string>
     <string name="EstadResultados">Tus <b>8 Kg</b>  de residuos separados y reciclados generan beneficios por <b>$8.218</b> COP </string>
-    <string name="EstadResultadosHint">Quiero invitarte para que continues!</string>
+    <string name="EstadResultadosHint">EcoApp te invita a que continues:</string>
     <string name="EstadConsejoTit1">Reciclando</string>
     <string name="EstadConsejoSub1">Separa tus resuduos en contenedores adecuados.</string>
     <string name="EstadConsejoTit2">Reutilizando</string>
