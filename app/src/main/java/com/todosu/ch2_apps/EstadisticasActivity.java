@@ -1,6 +1,6 @@
 package com.todosu.ch2_apps;
 
-import android.app.AlertDialog;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -72,7 +72,7 @@ public class EstadisticasActivity extends AppCompatActivity {
 
     // Método para seleccionar el evento y mostrar los gráficos
     public void seleccionarEventos() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
 
        // Convertir ArrayList a CharSequence[]
         CharSequence[] eventos = Data.getListaEventosDelUsuarioConectado().stream()
