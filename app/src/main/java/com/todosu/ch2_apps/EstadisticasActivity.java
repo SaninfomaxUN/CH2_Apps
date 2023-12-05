@@ -43,12 +43,19 @@ public class EstadisticasActivity extends AppCompatActivity {
 
         findReferences();
         initBtnSeleccionarEvento();
-        //seleccionarEventos();
+        revisarEventosRegistrados();
         regresar();
     }
     // Inicializar el botón para seleccionar el evento
     private void initBtnSeleccionarEvento() {
         btnSeleccEvento.setOnClickListener(v -> seleccionarEventos());
+    }
+    // Revisar si hay eventos registrados
+    private void revisarEventosRegistrados() {
+        if (Data.getListaEventosDelUsuarioConectado().isEmpty()){
+            btnSeleccEvento.setEnabled(false);
+            btnSeleccEvento.setText("No tienes eventos");
+        }
     }
     // Cambiar el nombre del botón según el evento seleccionado
     private void cambiarNombreBtnSeleccionarEvento() {
