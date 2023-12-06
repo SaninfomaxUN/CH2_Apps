@@ -22,6 +22,18 @@
     <string name="ConsejoNota4">Opta por proveedores que ofrezcan opciones más sostenibles en términos de envases y productos promocionales.</string>
 
 
+    <!-- Inicio de Sesión -->
+    <string name="LoginBienvenido">¡Bienvenido!</string>
+    <string name="LoginSlogan">Haz parte del cambio…</string>
+    <string name="LoginRegistrate">Registrate Aquí</string>
+    <string name="LoginSloganLogo">Eventos Sostenibles con el Medio Ambiente</string>
+    <string name="LoginCorreo">Correo Electrónico</string>
+    <string name="LoginContrasena">Contraseña</string>
+    <string name="LoginIngresar">Ingresar</string>
+    <string name="LoginOtrasOpciones">Tambien puedes ingresar a través de …</string>
+
+
+
     <!-- General -->
     <string name="regresar">regresar</string>
 
