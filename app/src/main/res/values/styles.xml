@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Transparent color -->
+    <style name="Transparent" parent="Theme.AppCompat.NoActionBar">
+        <item name="color" type="color">@android:color/transparent</item>
+    </style>
+</resources>

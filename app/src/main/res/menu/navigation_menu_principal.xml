@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/MisEventos"
+        android:enabled="true"
+        android:icon="@drawable/event_24"
+        android:title="@string/MenuPrinEventos"/>
+    <item
+        android:id="@+id/RegistrarConsumo"
+        android:enabled="true"
+        android:icon="@drawable/registro_24"
+        android:title="@string/MenuPrincRegistrar"/>
+    <item
+        android:id="@+id/Estadisticas"
+        android:enabled="true"
+        android:icon="@drawable/estadisticas_24"
+        android:title="@string/MenuPrincEstadisticas"/>
+</menu>

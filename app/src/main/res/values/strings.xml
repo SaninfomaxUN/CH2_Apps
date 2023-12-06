@@ -25,4 +25,12 @@
     <!-- General -->
     <string name="regresar">regresar</string>
 
+    <!-- Menu Principal -->
+    <string name="MenuPrinEventos">Mis Eventos</string>
+    <string name="MenuPrincRegistrar">Registrar Consumo</string>
+    <string name="MenuPrincEstadisticas">Mis Estadísticas</string>
+    <string name="MenuPrincSlogan1">Reducir la generación de residuos en eventos es fundamental para minimizar su impacto ambiental y promover la sostenibilidad.</string>
+    <string name="MenuPrincDialogoTitulo">Hola soy EVENT!</string>
+    <string name="MenuPrincDialogoMensaje">Vamos a calcular los beneficios medioambientales que generas al reciclar envases y empaques en tus eventos.</string>
+
 </resources>
