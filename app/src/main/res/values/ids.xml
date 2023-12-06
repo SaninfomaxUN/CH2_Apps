@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="minBarChart" type="id"/>
+    <item name="maxBarChart" type="id"/>
+    <item name="promBarChart" type="id"/>
+    <item name="totalBarChart" type="id"/>
+</resources>

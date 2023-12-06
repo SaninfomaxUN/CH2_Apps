@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E49D9D"
+    android:backgroundTint="#D88484"
     tools:context=".EstadisticasActivity">
 
     <ScrollView
@@ -52,7 +54,7 @@
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="0dp"
+                    android:layout_marginEnd="0dp"
                     android:fontFamily="@font/inter_bold"
                     android:text="@string/EstadTitulo"
                     android:textColor="#3f8d55"
@@ -67,15 +69,203 @@
                     android:textAlignment="center"
                     android:textSize="20sp" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingVertical="10sp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSeleccEvento"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_semibold"
+                        android:text="@string/EstadisticaBtnSelecEvento"
+                        android:textColor="#000000"
+                        app:backgroundTint="#C8C8C8"
+                        app:cornerRadius="8dp"
+                        app:strokeColor="@color/Verde_Aburrido"
+                        app:strokeWidth="2dp" />
+                    <!--                <TextView
+                    android:id="@+id/subTitleSelect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="0dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:text="@string/EstadisticaMin"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />-->
+                </LinearLayout>
+
             </LinearLayout>
 
-            <com.github.mikephil.charting.charts.HorizontalBarChart
-                android:id="@+id/horizontalBarChart"
-                android:layout_width="match_parent"
-                android:layout_height="236dp"
-                android:layout_margin="25dp" />
-
             <LinearLayout
+                android:id="@+id/BarChartLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:visibility="invisible"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/minBarChartLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="15dp" />
+
+                    <TextView
+                        android:id="@+id/subTitleMin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="0dp"
+                        android:fontFamily="@font/inter_bold"
+                        android:text="@string/EstadisticaMin"
+                        android:textColor="#3f8d55"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/subTextMin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_light"
+                        android:text="@string/EstadisticaSubMin"
+                        android:textAlignment="center"
+                        android:textSize="14sp" />
+
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/emptyMinBarChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="236dp"
+                        android:layout_margin="25dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/maxBarChartLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="15dp" />
+
+                    <TextView
+                        android:id="@+id/subTitleMax"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="0dp"
+                        android:fontFamily="@font/inter_bold"
+                        android:text="@string/EstadisticaMax"
+                        android:textColor="#3f8d55"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/subTextMax"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_light"
+                        android:text="@string/EstadisticaSubMax"
+                        android:textAlignment="center"
+                        android:textSize="14sp" />
+
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/emptyMaxBarChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="236dp"
+                        android:layout_margin="25dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/promBarChartLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="15dp" />
+
+                    <TextView
+                        android:id="@+id/subTitleProm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="0dp"
+                        android:fontFamily="@font/inter_bold"
+                        android:text="@string/EstadisticaProm"
+                        android:textColor="#3f8d55"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/subTextProm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_light"
+                        android:text="@string/EstadisticaSubProm"
+                        android:textAlignment="center"
+                        android:textSize="14sp" />
+
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/emptyPromBarChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="236dp"
+                        android:layout_margin="25dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/totalBarChartLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="15dp" />
+
+                    <TextView
+                        android:id="@+id/subTitleTotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="0dp"
+                        android:fontFamily="@font/inter_bold"
+                        android:text="@string/EstadisticaTotal"
+                        android:textColor="#3f8d55"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/subTextTotal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_light"
+                        android:text="@string/EstadisticaSubTotal"
+                        android:textAlignment="center"
+                        android:textSize="14sp" />
+
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/emptyTotalBarChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="236dp"
+                        android:layout_margin="25dp" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+            </LinearLayout>
+
+            <!--<LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
@@ -110,7 +300,7 @@
                         android:textSize="16dp" />
                 </LinearLayout>
 
-            </LinearLayout>
+            </LinearLayout>-->
 
             <TextView
                 android:id="@+id/textView5"
