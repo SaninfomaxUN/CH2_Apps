@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.view.KeyEvent;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -62,9 +62,7 @@ public class InicioSesionActivity extends AppCompatActivity {
     }
 
     private void inicializarBtnIniciarSesion() {
-        btnIniciarSesion.setOnClickListener(view -> {
-            checkLogin();
-        });
+        btnIniciarSesion.setOnClickListener(view -> checkLogin());
 
     }
     private void checkLogin() {
@@ -117,12 +115,14 @@ public class InicioSesionActivity extends AppCompatActivity {
     }
 
     private boolean checkPass(Usuario usuarioEncontrado) {
-        editTextPass.getEditText().setText("");
+
         if (usuarioEncontrado.getContrasena().equals(editTextPass.getEditText().getText().toString())) {
             editTextPass.setError(null);
+
             return true;
         } else {
             editTextPass.setError("Contraseña Incorrecta");
+            editTextPass.getEditText().setText("");
             return false;
         }
     }
@@ -137,7 +137,25 @@ public class InicioSesionActivity extends AppCompatActivity {
         Toast.makeText(this, "Bienvenido " + usuarioEncontrado.getNombreCompleto(), Toast.LENGTH_LONG).show();
         Intent intent = new Intent(this, MenuPrincipalActivity.class);
         startActivity(intent);
+        //finish();
     }
+
+    //Salir de la App - Botón Atrás
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+       if (keyCode == KeyEvent.KEYCODE_BACK) {
+                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
+                builder.setMessage("¿Deseas salir de EcoApp?");
+                builder.setPositiveButton("Salir", (dialogInterface, i) -> {
+                    finishAffinity();
+                });
+                builder.setNegativeButton("Cancelar", null);
+                builder.show();
+                return true;
+            }
+            return super.onKeyDown(keyCode, event);
+    }
+
 
 
 
