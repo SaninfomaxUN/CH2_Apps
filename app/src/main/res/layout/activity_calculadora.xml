@@ -48,7 +48,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
-                android:text="Envases y Empaques"
+                android:text="@string/CalculadoraTitulo"
                 android:textColor="#2B8143"
                 android:textSize="28sp"
                 android:textStyle="bold"/>
@@ -61,7 +61,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:backgroundTint="#2B5981"
-                android:text="Consultar Evento"
+                android:text="@string/CalculadoraBtnConsultar"
                 android:textSize="24sp" />
 
             <androidx.gridlayout.widget.GridLayout
@@ -88,21 +88,24 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="PLÁSTICO"
+                        android:text="@string/CalculadoraSubtituloPlastico"
                         android:textAlignment="center"
                         android:textColor="@color/design_default_color_primary_dark"
                         android:textSize="20sp"
                         android:layout_weight="1"
                         android:textStyle="bold" />
+
                     <EditText
                         android:id="@+id/editTextPlastico"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:ems="8"
-                        android:gravity="center|center_horizontal"
-                        android:hint="Kilogramos"
                         android:layout_weight="1"
-                        android:inputType="numberDecimal" />
+                        android:ems="8"
+                        android:gravity="center"
+                        android:hint="@string/CalculadoraHintKg"
+                        android:inputType="numberDecimal"
+                        android:minHeight="48dp"
+                        android:importantForAutofill="no"/>
 
 
                 </LinearLayout>
@@ -129,7 +132,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="ALUMINIO"
+                        android:text="@string/CalculadoraSubtituloAluminio"
                         android:textAlignment="center"
                         android:textColor="@color/design_default_color_primary_dark"
                         android:textSize="20sp"
@@ -140,11 +143,13 @@
                         android:id="@+id/editTextAluminio"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:ems="8"
                         android:gravity="center"
-                        android:hint="Kilogramos"
-                        android:layout_weight="1"
-                        android:inputType="numberDecimal" />
+                        android:hint="@string/CalculadoraHintKg"
+                        android:inputType="numberDecimal"
+                        android:minHeight="48dp"
+                        android:importantForAutofill="no"/>
 
                 </LinearLayout>
 
@@ -171,7 +176,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="CARTÓN"
+                        android:text="@string/CalculadoraSubtituloCarton"
                         android:textAlignment="center"
                         android:textColor="@color/design_default_color_primary_dark"
                         android:textSize="20sp"
@@ -181,11 +186,13 @@
                         android:id="@+id/editTextCarton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:ems="8"
                         android:gravity="center"
-                        android:hint="Kilogramos"
-                        android:layout_weight="1"
-                        android:inputType="numberDecimal" />
+                        android:hint="@string/CalculadoraHintKg"
+                        android:inputType="numberDecimal"
+                        android:minHeight="48dp"
+                        android:importantForAutofill="no"/>
 
                 </LinearLayout>
 
@@ -210,7 +217,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="TETRA PACK"
+                        android:text="@string/CalculadoraSubtituloTetrapack"
                         android:textAlignment="center"
                         android:textColor="@color/design_default_color_primary_dark"
                         android:textSize="20sp"
@@ -221,11 +228,13 @@
                         android:id="@+id/editTextTetraPack"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:ems="8"
                         android:gravity="center|center_horizontal"
-                        android:hint="Kilogramos"
-                        android:layout_weight="1"
-                        android:inputType="numberDecimal" />
+                        android:hint="@string/CalculadoraHintKg"
+                        android:inputType="numberDecimal"
+                        android:minHeight="48dp"
+                        android:importantForAutofill="no"/>
 
                 </LinearLayout>
 
@@ -252,23 +261,24 @@
                         android:layout_width="167dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="VIDRIO"
+                        android:text="@string/CalculadoraSubtituloVidrio"
                         android:textAlignment="center"
                         android:textColor="@color/design_default_color_primary_dark"
                         android:textSize="20sp"
                         android:layout_weight="1"
                         android:textStyle="bold" />
+
                     <EditText
                         android:id="@+id/editTextVidrio"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:ems="8"
                         android:gravity="center|center_horizontal"
-                        android:hint="Kilogramos"
-                        android:layout_weight="1"
+                        android:hint="@string/CalculadoraHintKg"
                         android:inputType="numberDecimal"
-                        android:layout_row="4"
-                        android:layout_column="3"/>
+                        android:minHeight="48dp"
+                        android:importantForAutofill="no"/>
 
                 </LinearLayout>
 
@@ -295,7 +305,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:backgroundTint="#2B8143"
-                android:text="Registrar Consumo"
+                android:text="@string/CalculadoraBtnRegistrar"
                 android:textSize="20sp"/>
 
         </LinearLayout>
