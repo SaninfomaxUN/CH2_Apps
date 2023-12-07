@@ -62,7 +62,7 @@ public class CalculadoraActivity extends AppCompatActivity {
                     double cantidadvidrio = Double.parseDouble( vidrio.getText().toString() );
 
                     registroEvento registro = new registroEvento( cantidadplastico, cantidadaluminio, cantidadcarton, cantidadtetrapack, cantidadvidrio );
-                    Data.agregarRegistroDelEventoDelUsuarioConectado( nombreevento,registro);
+                    Data.agregarRegistroDelEventoDelUsuarioConectado( nombreevento,registro, CalculadoraActivity.this );
 
                     Toast.makeText(getApplicationContext(),"Registro exitoso", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(v.getContext(), MenuPrincipalActivity.class);
