@@ -46,6 +46,19 @@
     <!-- General -->
     <string name="regresar">regresar</string>
 
+
+    <!-- Registro Consumo -->
+    <string name="CalculadoraTitulo">Envases y Empaques</string>
+    <string name="CalculadoraBtnConsultar">Consultar Evento</string>
+    <string name="CalculadoraSubtituloPlastico">PLÁSTICO</string>
+    <string name="CalculadoraSubtituloAluminio">ALUMINIO</string>
+    <string name="CalculadoraSubtituloCarton">CARTÓN</string>
+    <string name="CalculadoraSubtituloTetrapack">TETRAPACK</string>
+    <string name="CalculadoraSubtituloVidrio">VIDRIO</string>
+    <string name="CalculadoraHintKg">Kilogramos</string>
+
+    <string name="CalculadoraBtnRegistrar">Registrar Consumo</string>
+
     <!-- Menu Principal -->
     <string name="MenuPrinEventos">Mis Eventos</string>
     <string name="MenuPrincRegistrar">Registrar Consumo</string>
