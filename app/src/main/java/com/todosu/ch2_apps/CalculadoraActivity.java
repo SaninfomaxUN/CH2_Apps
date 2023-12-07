@@ -84,15 +84,14 @@ public class CalculadoraActivity extends AppCompatActivity {
                 .map(Evento::getNombreEvento)
                 .toArray(CharSequence[]::new);
 
-        CharSequence[] finalEventos = eventos;
         builder.setTitle("Selecciona el evento:")
                 .setItems(eventos, (dialog, posEventoSeleccionado) -> {
                     Toast.makeText(
                                     CalculadoraActivity.this,
-                                    "Seleccionaste: " + finalEventos[posEventoSeleccionado],
+                                    "Seleccionaste: " + eventos[posEventoSeleccionado],
                                     Toast.LENGTH_SHORT)
                             .show();
-                    nombreevento=(finalEventos[posEventoSeleccionado].toString());
+                    nombreevento=(eventos[posEventoSeleccionado].toString());
                     consultar.setText( nombreevento );
 
                 });
