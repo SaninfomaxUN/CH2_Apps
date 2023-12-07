@@ -32,6 +32,9 @@
         <activity android:name=".RegistroActivity"
             android:exported="false"/>
         <activity
+            android:name=".TerminosActivity"
+            android:exported="false" />
+        <activity
             android:name=".InicioSesionActivity"
             android:exported="false" />
         <activity

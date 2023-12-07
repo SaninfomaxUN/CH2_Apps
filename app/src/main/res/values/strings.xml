@@ -54,4 +54,20 @@
     <string name="MenuPrincDialogoTitulo">Hola soy EVENT!</string>
     <string name="MenuPrincDialogoMensaje">Vamos a calcular los beneficios medioambientales que generas al reciclar envases y empaques en tus eventos.</string>
 
+
+    <!-- Registro -->
+    <string name="RegistroBienvenido">Bienvenido!</string>
+    <string name="RegistroTitulo">Registro</string>
+    <string name="RegistroNombre">Nombres y Apellidos</string>
+    <string name="RegistroContrasena">Contraseña</string>
+    <string name="RegistroCiudad">Selecciona tu ciudad</string>
+    <string name="RegistroCorreo">Correo electronico</string>
+    <string name="registro_terminos">Acepto el tratamiento, almacenamiento y uso de mis datos personales, de conformidad con lo establecido en los <a href="link1">Términos y Condiciones</a> de uso de la App.</string>
+    <string name="RegistroGuardar">Guardar</string>
+
+    <!-- Terminos -->
+    <string name="terminos_titulo">Aceptación de Términos y Condiciones</string>
+    <string name="terminos">Al marcar la casilla el Usuario acepta expresamente los “Términos y Condiciones”, siendo condición esencial para la utilización de la aplicación. En el evento en que se encuentre en desacuerdo con estos Términos y Condiciones, solicitamos abandonar la aplicación inmediatamente. ECO APP podrá modificar los presentes términos y condiciones, avisando a los usuarios de la aplicación mediante la difusión de las modificación por algún medio electrónico, redes sociales, SMS y/o correo electrónico, lo cual se entenderá aceptado por el usuario si éste continua con el uso de la aplicación. Resposanbilidad, ECO APP procurará garantizar disponibilidad, continuidad o buen funcionamiento de la aplicación. ECO APP podrá bloquear, interrumpir o restringir el acceso a esta cuando lo considere necesario para el mejoramiento de la aplicación o por dada de baja de la misma. Se recomienda al Usuario tomar medidas adecuadas y actuar diligentemente al momento de acceder a la aplicación, como por ejemplo, contar con programas de protección, antivirus, para manejo de malware, spyware y herramientas similares. ECO APP no será responsable por: a) Fuerza mayor o caso fortuito; b) Por la pérdida, extravío o hurto de su dispositivo móvil que implique el acceso de terceros a la aplicación móvil; c) Por errores en la digitación o accesos por parte del cliente; d) Por los perjuicios, lucro cesante, daño emergente, morales, y en general sumas a cargo de ECO APP, por los retrasos, no procesamiento de información o suspensión del servicio del operador móvil o daños en los dispositivos móviles.Jurisdicción, estos términos y condiciones y todo lo que tenga que ver con esta aplicación, se rigen por las leyes de colombianas. Uso de información no personal, ECO APP también recolecta información no personal en forma agregada para seguimiento de datos como el número total de descargas de la aplicación. Utilizamos esta información, que permanece en forma agregada, para entender el comportamiento de la aplicación.</string>
+
+
 </resources>
