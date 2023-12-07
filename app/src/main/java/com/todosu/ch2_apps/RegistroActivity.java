@@ -3,35 +3,30 @@ package com.todosu.ch2_apps;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.todosu.ch2_apps.models.Usuario;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.nio.Buffer;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
-import java.util.ArrayList;
-
 public class RegistroActivity extends AppCompatActivity {
-    TextInputEditText nombre, contrasena, ciudad, correo;
+    TextInputEditText edt_nombre, etd_contrasena, etd_ciudad, etd_correo;
+    TextInputLayout til_nombre, til_contrasena, til_ciudad, til_correo;
     CheckBox aceptar_terminos;
     Button btn_registrar;
 
-    ArrayList<Usuario> lista_usuarios = new ArrayList<>();
 
 
     @Override
@@ -41,136 +36,159 @@ public class RegistroActivity extends AppCompatActivity {
 
 
         
-        iniciar_componente();
-        guardar();
-        regresar();
+        iniciar_componentes();
+        inicializarBtnRegistro();
+        inicializarTerminos();
+        inicializarBtnRegresar();
     }
 
-    private void iniciar_componente() {
+    private void iniciar_componentes() {
 
-        nombre = findViewById(R.id.edt_nombre);
-        contrasena = findViewById(R.id.etd_contrasena);
-        ciudad = findViewById(R.id.etd_ciudad);
-        correo = findViewById(R.id.etd_correo);
-        aceptar_terminos = findViewById(R.id.checkBox);
+        edt_nombre = findViewById(R.id.edt_nombre);
+        etd_contrasena = findViewById(R.id.etd_contrasena);
+        etd_ciudad = findViewById(R.id.etd_ciudad);
+        etd_correo = findViewById(R.id.etd_correo);
+        aceptar_terminos = findViewById(R.id.aceptar_terminos);
         btn_registrar = findViewById(R.id.btnGuardar);
 
+        til_nombre = findViewById(R.id.til_nombre);
+        til_contrasena = findViewById(R.id.til_contrasena);
+        til_ciudad = findViewById(R.id.til_ciudad);
+        til_correo = findViewById(R.id.til_correo);
+
     }
 
 
-    private void guardar() {
+    private void inicializarBtnRegistro() {
 
-        btn_registrar.setOnClickListener(new View.OnClickListener() {
+        btn_registrar.setOnClickListener(view -> {
+            if(!validarCamposCompletosFormulario()){
+                return;
+            }
+            if(!validarContenidoFormulario()){
+                return;
+            }
+            if(!checkUsuario()){
+                return;
+            }
+            guardar_usuario();
+
+        });
+
+    }
+
+    //Metodo para obtener el texto de los terminos y redirigir
+    public void inicializarTerminos(){
+        TextView terminos = findViewById(R.id.registro_terminos);
+        terminos.setMovementMethod(LinkMovementMethod.getInstance());
+
+        // Obtener el texto del CheckBox
+        String text = getResources().getString(R.string.registro_terminos);
+
+        // Crear un SpannableString para modificar el CheckBox
+        SpannableString spannableString = new SpannableString(text);
+
+        // Definir el enlace y su comportamiento al hacer clic
+        ClickableSpan link1ClickableSpan = new ClickableSpan() {
             @Override
             public void onClick(View view) {
-                String nombre_registro = nombre.getText().toString();
-                String contrasena_registro = contrasena.getText().toString();
-                String ciudad_registro = ciudad.getText().toString();
-                String correo_registro = correo.getText().toString();
-                Usuario usuario = new Usuario(correo_registro, nombre_registro, ciudad_registro, contrasena_registro);
-                String usuario_registrar = usuario.getEmail() + "," + usuario.getNombreCompleto() + ","
-                        + usuario.getCiudad() + "," +usuario.getContrasena() +"\n";
-
-                if(!aceptar_terminos.isChecked()){
-                    Toast.makeText(getApplicationContext(), "Debe aceptar los términos", Toast.LENGTH_LONG).show();
-
-                }else{
-                    leer_archivo();
-                    boolean validar_usuario = validar_usuario_existe(lista_usuarios, correo_registro);
-                    if(validar_usuario){
-                        Toast.makeText(getApplicationContext(), "Ya existe el ususario", Toast.LENGTH_LONG).show();
-                    }else{
-                        String contrasena [] = contrasena_registro.split("");
-                        if(contrasena.length<6){
-                            Toast.makeText(getApplicationContext(), "Contraseña debe tener minimo 6 caracteres", Toast.LENGTH_LONG).show();
-                        }else{
-                            Data.registrarUsuario(usuario);
-                            guardar_usuario(usuario_registrar);
-                        }
-
-                    }
-
-
-                }
-
-
-
+                // Acciones a realizar cuando se hace clic en el enlace 1
+                Intent intent = new Intent(RegistroActivity.this, TerminosActivity.class);
+                startActivity(intent);
             }
-        });
+        };
+        spannableString.setSpan(link1ClickableSpan, text.indexOf("Términos y Condiciones"), text.indexOf("Términos y Condiciones") + "Términos y Condiciones".length(), 0);
+        // Aplicar el SpannableString al TextView
+        terminos.setText(spannableString);
 
     }
 
-
-
-    private void guardar_usuario(String usuarioRegistrar) {
-        File archivo = new File(getFilesDir(), "registro_usuario.txt");
-        if(!archivo.exists()){
-            try {
-                FileWriter escritor_de_archivo = new FileWriter(archivo);
-                escritor_de_archivo.write(usuarioRegistrar.toString());
-                escritor_de_archivo.flush();
-                escritor_de_archivo.close();
-                Toast.makeText(this, "Usuario guardado con ėxito", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(this, InicioSesionActivity.class);
-                startActivity(intent);
-            } catch (IOException e) {
-                e.printStackTrace();
-                Toast.makeText(this, "Error al guardar usuario", Toast.LENGTH_SHORT).show();
-            }
-        }else{
-            try {
-                Files.write(Paths.get(getFilesDir() + "/registro_usuario.txt"), usuarioRegistrar.toString().getBytes(), StandardOpenOption.APPEND);
-                Toast.makeText(this, "Usuario guardado con ėxito", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(this, InicioSesionActivity.class);
-                startActivity(intent);
-            } catch (IOException e) {
-                e.printStackTrace();
-                Toast.makeText(this, "Error al guardar usuario", Toast.LENGTH_SHORT).show();
-            }
-
+    private boolean validarCamposCompletosFormulario() {
+        cleanErrors();
+        boolean valido = true;
+        if(edt_nombre.getText().toString().isEmpty()){
+            til_nombre.setError("El nombre es requerido");
+            valido = false;
         }
+        if(etd_contrasena.getText().toString().isEmpty()){
+            til_contrasena.setError("La contraseña es requerida");
+            valido = false;
+        }
+        if(etd_ciudad.getText().toString().isEmpty()){
+            til_ciudad.setError("La ciudad es requerida");
+            valido = false;
+        }
+        if(etd_correo.getText().toString().isEmpty()){
+            til_correo.setError("El correo es requerido");
+            valido = false;
+        }
+        return valido;
     }
 
-    private void regresar() {
+    private boolean validarContenidoFormulario() {
+        cleanErrors();
+        boolean valido = true;
+        if(etd_contrasena.getText().toString().length() < 8){
+            til_contrasena.setError("La contraseña debe tener al menos 8 caracteres!");
+            valido = false;
+        }
+        if(!etd_correo.getText().toString().contains("@")){
+            til_correo.setError("El correo electrónico debe tener un formato válido!");
+            valido = false;
+        }
+        if(!aceptar_terminos.isChecked()){
+            aceptar_terminos.setButtonTintList(ColorStateList.valueOf(Color.RED));
+            Toast.makeText(getApplicationContext(), "Debe aceptar los términos!", Toast.LENGTH_LONG).show();
+            valido = false;
+        }
+        return valido;
+    }
+
+
+    private boolean checkUsuario() {
+        Usuario usuario = Data.getUsuarioPorEmail(etd_correo.getText().toString());
+        if(usuario != null){
+            Toast.makeText(getApplicationContext(), "El usuario ya se encuentra registrado!", Toast.LENGTH_LONG).show();
+            regresar();
+            return false;
+        }
+        return true;
+    }
+
+    private void cleanErrors() {
+        til_nombre.setError(null);
+        til_contrasena.setError(null);
+        til_ciudad.setError(null);
+        til_correo.setError(null);
+        aceptar_terminos.setButtonTintList(ColorStateList.valueOf(Color.GRAY));
+    }
+
+
+
+    private void guardar_usuario(){
+        String nombre_registro = edt_nombre.getText().toString();
+        String contrasena_registro = etd_contrasena.getText().toString();
+        String ciudad_registro = etd_ciudad.getText().toString();
+        String correo_registro = etd_correo.getText().toString();
+        Usuario usuario = new Usuario(correo_registro, nombre_registro, ciudad_registro, contrasena_registro);
+
+        Data.registrarUsuario(usuario);
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
+        builder.setMessage("Usuario registrado con éxito!").setCancelable(false);
+        builder.setPositiveButton("Aceptar", (dialogInterface, i) -> regresar());
+        builder.show();
+    }
+
+    private void inicializarBtnRegresar() {
         ImageButton btnRegresar = findViewById(R.id.btnRegresar);
-        btnRegresar.setOnClickListener(view -> {
-            Intent intent = new Intent(this, InicioSesionActivity.class);
-            startActivity(intent);
-        });
+        btnRegresar.setOnClickListener(view -> regresar());
 
     }
-    private void leer_archivo(){
-        File archivo = new File(getFilesDir(), "registro_usuario.txt");
-        try {
-            FileReader lector_archivo = new FileReader(archivo);
-            BufferedReader bf_lector_archivo = new BufferedReader(lector_archivo);
-            String linea;
-            while ((linea = bf_lector_archivo.readLine())!=null){
-                String usuario_recuperado [] = linea.split(",");
-                Usuario usuario_registrado = new Usuario(
-                        usuario_recuperado[0].toString(),
-                        usuario_recuperado[1].toString(),
-                        usuario_recuperado[2].toString(),
-                        usuario_recuperado[3].toString()
-                );
-                lista_usuarios.add(usuario_registrado);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
+    private void regresar(){
+        Intent intent = new Intent(this, InicioSesionActivity.class);
+        startActivity(intent);
     }
-    private boolean validar_usuario_existe(ArrayList<Usuario>lista_usuarios, String usuario_registrar) {
-        boolean usuario_existe = false;
-        if(lista_usuarios.size()>0){
-            for (int i=0; i<lista_usuarios.size(); i++){
-                if(lista_usuarios.get(i).getEmail().toString().equals(usuario_registrar)){
-                    usuario_existe = true;
-                    return usuario_existe;
-                }
-            }
-        }else{
-            Toast.makeText(getApplicationContext(), "No hay usuarios registrados", Toast.LENGTH_LONG).show();
-        }
-        return usuario_existe;
-    }
+
+
 }
