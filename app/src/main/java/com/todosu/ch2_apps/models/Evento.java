@@ -1,9 +1,11 @@
 package com.todosu.ch2_apps.models;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Evento {
+
+public class Evento implements Serializable {
     private int idEvento;
     private String nombreEvento;
     private String categoria;

@@ -2,8 +2,9 @@ package com.todosu.ch2_apps.models;
 
 
 import java.time.LocalDate;
+import java.io.Serializable;
 
-public class registroEvento{
+public class registroEvento implements Serializable {
     private LocalDate fecha;
     private double plastico;
     private double aluminio;

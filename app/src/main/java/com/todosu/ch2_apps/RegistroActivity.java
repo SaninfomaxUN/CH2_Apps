@@ -169,10 +169,10 @@ public class RegistroActivity extends AppCompatActivity {
         String nombre_registro = edt_nombre.getText().toString();
         String contrasena_registro = etd_contrasena.getText().toString();
         String ciudad_registro = etd_ciudad.getText().toString();
-        String correo_registro = etd_correo.getText().toString();
+        String correo_registro = etd_correo.getText().toString().toLowerCase();
         Usuario usuario = new Usuario(correo_registro, nombre_registro, ciudad_registro, contrasena_registro);
 
-        Data.registrarUsuario(usuario);
+        Data.registrarUsuario(usuario, this);
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
         builder.setMessage("Usuario registrado con éxito!").setCancelable(false);
         builder.setPositiveButton("Aceptar", (dialogInterface, i) -> regresar());

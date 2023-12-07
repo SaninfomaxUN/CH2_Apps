@@ -101,7 +101,7 @@ public class InicioSesionActivity extends AppCompatActivity {
 
     private Usuario checkEmail() {
 
-        Usuario usuarioEncontrado = Data.getUsuarioPorEmail(editTextCorreo.getEditText().getText().toString());
+        Usuario usuarioEncontrado = Data.getUsuarioPorEmail(editTextCorreo.getEditText().getText().toString().toLowerCase());
         if (usuarioEncontrado == null) {
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
             builder.setMessage("El correo ingresado no se encuentra registrado. Si no tienes una cuenta, puedes registrarte!");
@@ -137,7 +137,6 @@ public class InicioSesionActivity extends AppCompatActivity {
         Toast.makeText(this, "Bienvenido " + usuarioEncontrado.getNombreCompleto(), Toast.LENGTH_LONG).show();
         Intent intent = new Intent(this, MenuPrincipalActivity.class);
         startActivity(intent);
-        //finish();
     }
 
     //Salir de la App - Botón Atrás
@@ -146,9 +145,7 @@ public class InicioSesionActivity extends AppCompatActivity {
        if (keyCode == KeyEvent.KEYCODE_BACK) {
                 MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
                 builder.setMessage("¿Deseas salir de EcoApp?");
-                builder.setPositiveButton("Salir", (dialogInterface, i) -> {
-                    finishAffinity();
-                });
+                builder.setPositiveButton("Salir", (dialogInterface, i) -> finishAffinity());
                 builder.setNegativeButton("Cancelar", null);
                 builder.show();
                 return true;

@@ -2,8 +2,9 @@ package com.todosu.ch2_apps.models;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.io.Serializable;
 
-public class Usuario {
+public class Usuario implements Serializable {
 
     private String email;
     private String nombreCompleto;

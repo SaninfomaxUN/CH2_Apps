@@ -9,6 +9,11 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.ImageView;
 
+import com.todosu.ch2_apps.models.Evento;
+import com.todosu.ch2_apps.models.Usuario;
+import com.todosu.ch2_apps.models.registroEvento;
+
+
 public class MainActivity extends AppCompatActivity {
 
     private static final long SPLASH_DELAY = 4000;
@@ -24,13 +29,26 @@ public class MainActivity extends AppCompatActivity {
         fadaIn.setFillAfter(true);
         imageView.startAnimation(fadaIn);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(com.todosu.ch2_apps.MainActivity.this, InicioSesionActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        new Handler().postDelayed(() -> {
+            Intent intent = new Intent(MainActivity.this, InicioSesionActivity.class);
+            startActivity(intent);
+            finish();
         },SPLASH_DELAY);
+        Data.loadData(this);
+        //startData();
+
     }
+
+//    private void startData() {
+//        Data.registrarUsuario(new Usuario("example@mail.com", "Juan", "BOG", "123456"), this);
+//        UsuarioConectado.setUsuarioConectadoSegunEmailUsuario("example@mail.com");
+//        Data.agregarEventoDelUsuarioConectado(new Evento(1, "Evento 1", "Categoria 1", LocalDate.of(2021, 1, 1), 100));
+//        Data.agregarRegistroDelEventoDelUsuarioConectado("Evento 1", new registroEvento(41, 47, 8, 4 , 10));
+//        Data.agregarRegistroDelEventoDelUsuarioConectado("Evento 1", new registroEvento(40, 40, 40, 40 , 40));
+//
+//        Data.agregarEventoDelUsuarioConectado(new Evento(2, "Evento 2", "Categoria 2", LocalDate.of(2021, 2, 2), 200));
+//        Data.agregarRegistroDelEventoDelUsuarioConectado("Evento 2", new registroEvento(51, 37, 68, 4 , 90));
+//        Data.agregarRegistroDelEventoDelUsuarioConectado("Evento 2", new registroEvento(50, 50, 50, 50 , 50));
+//
+//    }
 }
