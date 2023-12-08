@@ -45,7 +45,7 @@ public class MenuPrincipalActivity extends AppCompatActivity {
     private void setNavBarMenuPrincipalActions() {
         navBarMenuPrincipal.setOnItemSelectedListener(item -> {
             if (item.getItemId() == R.id.MisEventos) {
-                Intent intent = new Intent(this, ConsejosActivity.class);
+                Intent intent = new Intent(this, EventosActivity.class);
                 startActivity(intent);
             } else if (item.getItemId() == R.id.RegistrarConsumo) {
                 Intent intent = new Intent(this, CalculadoraActivity.class);

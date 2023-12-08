@@ -38,6 +38,12 @@
             android:name=".InicioSesionActivity"
             android:exported="false" />
         <activity
+            android:name=".EventosActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".CrearEventoActivity"
+            android:exported="false"/>
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

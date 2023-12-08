@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CEE6CF"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="0dp"
+                android:paddingBottom="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/btnRegresarM"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginEnd="7dp"
+                        android:background="#CEE6CF"
+                        android:contentDescription="@string/regresar"
+                        android:foregroundGravity="center"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/back_arrow" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="Tus Eventos"
+                    android:textSize="34sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvEventos"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#CEE6CF"
+                    app:layout_constraintTop_toBottomOf="@+id/txv_title" />
+
+                <Button
+                    android:id="@+id/CrearEvento"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="25dp"
+
+                    android:width="189dp"
+                    android:height="60dp"
+                    android:backgroundTint="#4D724D"
+                    android:text="Crear Evento "
+                    android:textStyle="bold"  />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
