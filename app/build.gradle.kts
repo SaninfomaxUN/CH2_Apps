@@ -32,6 +32,9 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.12.0-alpha01")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation ("androidx.recyclerview:recyclerview:1.2.1")
+    implementation("androidx.cardview:cardview:1.0.0")
+    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0") // Asegúrate de verificar la última versión en el repositorio de GitHub.
     implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
     implementation("androidx.gridlayout:gridlayout:1.0.0") // Asegúrate de verificar la última versión en el repositorio de GitHub.
     testImplementation("junit:junit:4.13.2")
