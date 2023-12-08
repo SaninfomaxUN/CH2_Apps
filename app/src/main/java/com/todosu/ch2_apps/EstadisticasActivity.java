@@ -127,23 +127,24 @@ public class EstadisticasActivity extends AppCompatActivity {
             totalesEventoSeleccionado = getTotalPorEvento(eventoSeleccionado);
         }else{
             this.eventoSeleccionado = null;
-
+            double fraccionProm = 1.0 / Data.getListaEventosDelUsuarioConectado().size();
             for (Evento evento : Data.getListaEventosDelUsuarioConectado()) {
                 // Obtener cada mínimo y agregarlo a la lista
                 ArrayList<Double> minimoEventoSeleccionado = getMinimoPorEvento(evento);
                 for (int i = 0; i < 5; i++) {
-                    minimosEventosSeleccionados.set(i, minimosEventosSeleccionados.get(i) + minimoEventoSeleccionado.get(i));
+                    minimosEventosSeleccionados.set(i, Math.min(minimosEventosSeleccionados.get(i), minimoEventoSeleccionado.get(i)));
                 }
                 // Obtener cada máximo y agregarlo a la lista
                 ArrayList<Double> maximoEventoSeleccionado = getMaximoPorEvento(evento);
                 for (int i = 0; i < 5; i++) {
-                    maximosEventoSeleccionado.set(i, maximosEventoSeleccionado.get(i) + maximoEventoSeleccionado.get(i));
+                    maximosEventoSeleccionado.set(i, Math.max(maximosEventoSeleccionado.get(i),maximoEventoSeleccionado.get(i)));
                 }
                 // Obtener cada promedio y agregarlo a la lista
                 ArrayList<Double> promedioEventoSeleccionado = getPromedioPorEvento(evento);
                 for (int i = 0; i < 5; i++) {
-                    promediosEventoSeleccionado.set(i, promediosEventoSeleccionado.get(i) + promedioEventoSeleccionado.get(i));
+                    promediosEventoSeleccionado.set(i, promediosEventoSeleccionado.get(i) + promedioEventoSeleccionado.get(i)*fraccionProm);
                 }
+
                 // Obtener cada total y agregarlo a la lista
                 ArrayList<Double> totalEventoSeleccionado = getTotalPorEvento(evento);
                 for (int i = 0; i < 5; i++) {
