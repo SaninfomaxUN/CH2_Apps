@@ -53,84 +53,87 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp"
                     android:fontFamily="@font/inter_bold"
-                    android:text="Crea tu evento"
+                    android:text="@string/CrearEventoTitulo"
                     android:textSize="34sp" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"></LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center"
                 android:orientation="vertical">
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilNombreEvento"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="40dp">
+                    android:layout_marginTop="20dp"
+                    app:errorEnabled="true">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edtNombreEvento"
                         android:layout_width="350dp"
-                        android:layout_height="60dp"
-                        android:ems="10"
-                        android:hint="Nombre del evento"
-                        android:inputType="text"/>
+                        android:layout_height="wrap_content"
+                        android:hint="@string/CrearEventoNombre"
+                        android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
 
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilFechaEvento"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="40dp">
-
+                    android:layout_marginTop="20dp"
+                    app:errorEnabled="true">
 
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edtFechaEvento"
                         android:layout_width="350dp"
-                        android:layout_height="60dp"
+                        android:layout_height="wrap_content"
                         android:ems="10"
-                        android:hint="DD/MM/AA Fecha del evento"
-                        android:inputType="date"/>
+                        android:hint="@string/CrearEventoFecha"
+                        android:inputType="date" />
                 </com.google.android.material.textfield.TextInputLayout>
 
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilLugarEvento"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="40dp">
+                    android:layout_marginTop="20dp"
+                    app:errorEnabled="true">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edtLugarEvento"
                         android:layout_width="350dp"
-                        android:layout_height="60dp"
+                        android:layout_height="wrap_content"
                         android:ems="10"
-                        android:hint="Ciudad del evento"
-                        android:inputType="text"/>
+                        android:hint="@string/CrearEventoLugar"
+                        android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
 
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilAsistentes"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="40dp">
+                    android:layout_marginTop="20dp"
+                    app:errorEnabled="true">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edtAsistentes"
                         android:layout_width="350dp"
-                        android:layout_height="60dp"
+                        android:layout_height="wrap_content"
                         android:ems="10"
-                        android:hint="Numero de asistentes"
-                        android:inputType="number"/>
+                        android:hint="@string/CrearEventoAsistentes"
+                        android:inputType="number" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
@@ -145,7 +148,7 @@
                     android:width="189dp"
                     android:height="60dp"
                     android:backgroundTint="#4D724D"
-                    android:text="GUARDAR"
+                    android:text="@string/CrearEventoGuardar"
                     android:textStyle="bold" />
 
             </LinearLayout>

@@ -6,9 +6,8 @@ import java.util.ArrayList;
 
 
 public class Evento implements Serializable {
-    private int idEvento;
+    private String lugarEvento;
     private String nombreEvento;
-    private String categoria;
     private LocalDate fecha;
     private int numeroAsistentes;
 
@@ -17,10 +16,9 @@ public class Evento implements Serializable {
 
 
 
-    public Evento (int idEvento, String nombreEvento, String categoria, LocalDate fecha, int numeroAsistentes) {
-        this.idEvento = idEvento;
+    public Evento (String nombreEvento, String lugarEvento, LocalDate fecha, int numeroAsistentes) {
+        this.lugarEvento = lugarEvento;
         this.nombreEvento = nombreEvento;
-        this.categoria = categoria;
         this.fecha = fecha;
         this.numeroAsistentes = numeroAsistentes;
     }
@@ -39,30 +37,26 @@ public class Evento implements Serializable {
     public String getNombreEvento() {
         return nombreEvento;
     }
-    public String getCategoria() {
-        return categoria;
-    }
+
     public LocalDate getFecha() {
         return fecha;
     }
     public int getNumeroAsistentes() {
         return numeroAsistentes;
     }
-    public int getIdEvento() {
-        return idEvento;
+    public String getLugarEvento() {
+        return lugarEvento;
     }
     public ArrayList<registroEvento> getListaRegistros() {
         return listaRegistros;
     }
-    public void setIdEvento(int idEvento) {
-        this.idEvento = idEvento;
+    public void setLugarEvento(String lugarEvento) {
+        this.lugarEvento = lugarEvento;
     }
     public void setNombreEvento(String nombreEvento) {
         this.nombreEvento = nombreEvento;
     }
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
-    }
+
     public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }

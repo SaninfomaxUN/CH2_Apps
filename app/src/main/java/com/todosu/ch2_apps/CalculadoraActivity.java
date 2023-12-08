@@ -19,7 +19,7 @@ import com.todosu.ch2_apps.models.Evento;
 
 public class CalculadoraActivity extends AppCompatActivity {
 
-    String nombreevento;
+    String nombreEvento;
     EditText plastico, aluminio, carton, tetrapack, vidrio;
     Button consultar, guardar;
     @Override
@@ -39,11 +39,12 @@ public class CalculadoraActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 seleccionarEventos();
-            }} );
+            }
+        } );
         guardar.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (nombreevento==null){
+                if (nombreEvento ==null){
                     Toast.makeText( getApplicationContext(), "Por favor seleccione un evento", Toast.LENGTH_LONG ).show();
                     return;
                 }
@@ -62,7 +63,7 @@ public class CalculadoraActivity extends AppCompatActivity {
                     double cantidadvidrio = Double.parseDouble( vidrio.getText().toString() );
 
                     registroEvento registro = new registroEvento( cantidadplastico, cantidadaluminio, cantidadcarton, cantidadtetrapack, cantidadvidrio );
-                    Data.agregarRegistroDelEventoDelUsuarioConectado( nombreevento,registro, CalculadoraActivity.this );
+                    Data.agregarRegistroDelEventoDelUsuarioConectado(nombreEvento,registro, CalculadoraActivity.this );
 
                     Toast.makeText(getApplicationContext(),"Registro exitoso", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(v.getContext(), MenuPrincipalActivity.class);
@@ -71,7 +72,7 @@ public class CalculadoraActivity extends AppCompatActivity {
             }
         } );
 
-
+        setEventReceived();
         regresar();
     }
 
@@ -91,8 +92,8 @@ public class CalculadoraActivity extends AppCompatActivity {
                                     "Seleccionaste: " + eventos[posEventoSeleccionado],
                                     Toast.LENGTH_SHORT)
                             .show();
-                    nombreevento=(eventos[posEventoSeleccionado].toString());
-                    consultar.setText( nombreevento );
+                    nombreEvento =(eventos[posEventoSeleccionado].toString());
+                    consultar.setText(nombreEvento);
 
                 });
 
@@ -100,6 +101,15 @@ public class CalculadoraActivity extends AppCompatActivity {
         builder.show();
     }
 
+    private void setEventReceived() {
+        Intent intent = getIntent();
+
+        // Verificar si el Intent tiene un extra con la clave "nombreEvento"
+        if (intent.hasExtra("nombreEvento")) {
+            nombreEvento = intent.getStringExtra("nombreEvento");
+            consultar.setText(nombreEvento);
+        }
+    }
 
 
     private void regresar() {
